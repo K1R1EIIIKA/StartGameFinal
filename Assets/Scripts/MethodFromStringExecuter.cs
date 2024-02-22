@@ -43,7 +43,7 @@ public class MethodFromStringExecuter
     /// <returns>Выполнено ли условие</returns>
     public bool InvokeConditionMethod(string name, object[] parameters)
     {
-        Debug.Log(String.Join(", ", parameters));
+        // Debug.Log(String.Join(", ", parameters));
         var method = GetType().GetMethod(name);
         if (method != null)
             return (bool) method.Invoke(this,  parameters);

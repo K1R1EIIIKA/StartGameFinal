@@ -6,7 +6,7 @@
         "background": 1,
         "character": -1,
         "item": 1,
-        "decorations": [ 0, 1 ]
+        "decorations": [ 0, 1, 2, 1 ]
       },
       "dialogs": [
         {

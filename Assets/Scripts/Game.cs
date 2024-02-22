@@ -60,7 +60,7 @@ public class Game : MonoBehaviour
     
     public bool IsAnswered(int id, int shouldAnswer)
     {
-        Debug.Log(_savedAnswersId.Contains(id) + " " + (shouldAnswer == 1));
+        // Debug.Log(_savedAnswersId.Contains(id) + " " + (shouldAnswer == 1));
         return _savedAnswersId.Contains(id) == (shouldAnswer == 1);
     }
     

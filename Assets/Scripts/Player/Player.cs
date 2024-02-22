@@ -35,6 +35,13 @@ namespace Player
             CharacteristicsChanged?.Invoke(_characteristics);
         }
         
+        public void ChangeExp(int value)
+        {
+            Exp += value;
+            
+            CharacteristicsChanged?.Invoke(_characteristics);
+        }
+        
         public void ChangeCharacteristic(int id, int value)
         {
             if (id < 0 || id >= _characteristics.Count) 

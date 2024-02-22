@@ -2090,6 +2090,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characteristics: 
   _characteristicNames: []
+  CharacteristicsChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1042038985
 Transform:
   m_ObjectHideFlags: 0
@@ -2266,26 +2269,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1066200429}
-  - component: {fileID: 1066200428}
   m_Layer: 0
   m_Name: Fight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1066200428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066200427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2d1feb173f43fc83ad53e9fa994294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_IsActive: 0
 --- !u!4 &1066200429
 Transform:
   m_ObjectHideFlags: 0
@@ -3772,26 +3762,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683453822}
-  - component: {fileID: 1683453821}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1683453821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683453820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e9ee2495ac40699c144fb8f874208c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_IsActive: 0
 --- !u!4 &1683453822
 Transform:
   m_ObjectHideFlags: 0
