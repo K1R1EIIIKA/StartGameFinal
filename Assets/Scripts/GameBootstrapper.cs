@@ -10,6 +10,8 @@ using UnityEngine;
 /// </summary>
 public class GameBootstrapper : MonoBehaviour
 {
+    public static GameBootstrapper Instance { get; private set; }
+    
     [SerializeField] private Player.Player _player;
     [SerializeField] private Inventory _inventory;
     [SerializeField] private Game _game;
@@ -24,7 +26,9 @@ public class GameBootstrapper : MonoBehaviour
     {
         _executer = new MethodFromStringExecuter(_game ,_player, _inventory);
         _playerStartInfo = LoadFromJson<PlayerStartInfo>(_startCharacteristicsFile);
-        _gameNodes = LoadFromJson<GameNodes>(_gameConfigFile);           
+        _gameNodes = LoadFromJson<GameNodes>(_gameConfigFile);     
+        
+        Instance = this;
     }
 
     private void Start()

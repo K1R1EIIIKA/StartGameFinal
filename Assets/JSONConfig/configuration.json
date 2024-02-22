@@ -45,7 +45,7 @@
         },
         {
           "id": 1,
-          "text": "В палатке лежала сумка с ключами и сундук с золотом и запиской (\"1 золото - 1 ключ\").",
+          "text": "В палатке оказалось пусто, нечего было копаться в чужих вещах",
           "variants": [
             {
               "id": 4,
@@ -56,29 +56,18 @@
             },
             {
               "id": 19,
-              "text": "Взять ключ",
-              "conditions": [],
-              "to": 1,
-              "actions": [
+              "text": "Копаться усерднее",
+              "to": 10,
+              "conditions": [
                 {
-                  "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 7, 1 ]
+                  "name": "IsAnswered",
+                  "parameters": [19, 0]
                 }
-              ]
-            },
-            {
-              "id": 20,
-              "text": "Обменять ключ на золото",
-              "conditions": [],
-              "to": 1,
+              ],
               "actions": [
                 {
                   "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 7, -1 ]
-                },
-                {
-                  "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 0, 1 ]
+                  "parameters": [9, 2]
                 }
               ]
             }
@@ -86,42 +75,14 @@
         },
         {
           "id": 10,
-          "text": "В палатке лежала сумка с ключами и сундук с золотом и запиской (\"1 золото - 1 ключ\").",
+          "text": "После усердного копания Вы нашли немного брусники! Но зачем они Вам?",
           "variants": [
             {
               "id": 4,
-              "text": "Вернуться с пустыми руками назад",
+              "text": "Вернуться с вкусной брусникой назад",
               "to": 0,
               "conditions": [],
               "actions": []
-            },
-            {
-              "id": 19,
-              "text": "Взять ключ",
-              "conditions": [],
-              "to": 1,
-              "actions": [
-                {
-                  "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 7, 1 ]
-                }
-              ]
-            },
-            {
-              "id": 20,
-              "text": "Обменять ключ на золото",
-              "conditions": [],
-              "to": 1,
-              "actions": [
-                {
-                  "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 7, -1 ]
-                },
-                {
-                  "name": "ChangeItemInInventoryAt",
-                  "parameters": [ 0, 1 ]
-                }
-              ]
             }
           ]
         }

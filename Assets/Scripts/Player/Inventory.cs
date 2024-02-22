@@ -14,7 +14,6 @@ namespace Player
     
         public void Init(List<int> staff)
         {
-            print(staff.Count);
             staff.ForEach(o => Items.Add(o));
             InventoryInited?.Invoke(Items);
         }
@@ -30,6 +29,11 @@ namespace Player
             Items[id] += count;
             
             InventoryChanged?.Invoke(id, Items[id]);
+        }
+        
+        public bool HasItem(int id)
+        {
+            return Items[id] > 0;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Player;
+﻿using System;
+using Player;
+using UnityEngine;
 
 ///<summary>
 /// Обёртка для вызова методов с помощью строки и списка аргументов.
@@ -41,6 +43,7 @@ public class MethodFromStringExecuter
     /// <returns>Выполнено ли условие</returns>
     public bool InvokeConditionMethod(string name, object[] parameters)
     {
+        Debug.Log(String.Join(", ", parameters));
         var method = GetType().GetMethod(name);
         if (method != null)
             return (bool) method.Invoke(this,  parameters);
@@ -51,6 +54,9 @@ public class MethodFromStringExecuter
 
     public void ChangeItemInInventoryAt(int id, int count) =>
         _inventory.ChangeItemInInventoryAt(id, count);
+    
+    public void ChangeCharacteristic(int id, int value) =>
+        _player.ChangeCharacteristic(id, value);
 
     public void Win() =>
         _game.Win();
@@ -62,8 +68,17 @@ public class MethodFromStringExecuter
     
     #region Conditions
     
-    public bool IsAnswered(int id, bool shouldAnswer) =>
+    public bool IsAnswered(int id, int shouldAnswer) =>
         _game.IsAnswered(id, shouldAnswer);
+    
+    public bool IsStatMore(int id, int value) =>
+        _player.IsStatMore(id, value);
+    
+    public bool IsStatLess(int id, int value) =>
+        _player.IsStatLess(id, value);
+    
+    public bool IsStatEqual(int id, int value) =>
+        _player.IsStatEqual(id, value);
     
     #endregion
 }

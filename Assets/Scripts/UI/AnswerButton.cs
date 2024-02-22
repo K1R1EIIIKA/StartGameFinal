@@ -19,16 +19,6 @@ namespace UI
 
         public void Init(int number, DialogVariant variant)
         {
-            foreach (var condition in variant.conditions)
-            {
-                object[] objArray = condition.parameters.Cast<object>().ToArray();
-                if (!MethodFromStringExecuter.Instance.InvokeConditionMethod(condition.name, objArray))
-                {
-                    gameObject.SetActive(false);
-                    return;
-                }
-            }
-            
             _text.text = $"[{number}] {variant.text}";
             foreach (var action in variant.actions)
             {
@@ -43,7 +33,7 @@ namespace UI
             _mainButton.onClick.AddListener(() => Game.Instance.GoToDialog(variant.to));
             _mainButton.onClick.AddListener(() => GameLog.Instance.Log(_text.text));
             _mainButton.onClick.AddListener(() => Game.Instance.SaveAnswer(variant.id));
-            Debug.Log(String.Join(", ", Game.Instance.GetSavedAnswers()));
+            // Debug.Log(String.Join(", ", Game.Instance.GetSavedAnswers()));
         }
 
         private void OnDestroy()

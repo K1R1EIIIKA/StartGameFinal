@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using GameConfiguration;
+using Player;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -57,9 +58,10 @@ public class Game : MonoBehaviour
         _savedAnswersId.Add(id);
     }
     
-    public bool IsAnswered(int id, bool shouldAnswer)
+    public bool IsAnswered(int id, int shouldAnswer)
     {
-        return _savedAnswersId.Contains(id) == shouldAnswer;
+        Debug.Log(_savedAnswersId.Contains(id) + " " + (shouldAnswer == 1));
+        return _savedAnswersId.Contains(id) == (shouldAnswer == 1);
     }
     
     
@@ -72,11 +74,18 @@ public class Game : MonoBehaviour
     {
         GameLog.Instance.Log("[Вы выиграли!]");
         _savedAnswersId.Clear();
+        RestartGame();
     }
 
     public void Lose()
     {
         GameLog.Instance.Log("[Вы проиграли!]");
         _savedAnswersId.Clear();
+        RestartGame();
+    }
+    
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

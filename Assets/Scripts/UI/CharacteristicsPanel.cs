@@ -16,6 +16,11 @@ namespace UI
         [SerializeField] private TMP_Text _expText;
         [SerializeField] private TMP_Text _healthText;
         
+        private void Awake()
+        {
+            _player.CharacteristicsChanged.AddListener(OnCharacteristicsUpdated);
+        }
+        
         private void UpdateView(List<int> newCharacteristic, int health, int maxHealth, int exp)
         {
             _forceText.text = newCharacteristic[0].ToString();
@@ -24,6 +29,11 @@ namespace UI
             _enduranceText.text = newCharacteristic[3].ToString();
             _expText.text = exp.ToString();
             _healthText.text = $"{health}/{maxHealth}";
+        }
+        
+        private void OnCharacteristicsUpdated(List<int> newCharacteristic)
+        {
+            UpdateView(newCharacteristic, _player.Health, _player.MaxHealth, _player.Exp);
         }
     }
 }
