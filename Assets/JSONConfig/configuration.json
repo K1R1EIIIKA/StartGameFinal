@@ -6,7 +6,12 @@
         "background": 1,
         "character": -1,
         "item": 1,
-        "decorations": [ 0, 1, 2, 1 ]
+        "decorations": [
+          0,
+          1,
+          2,
+          1
+        ]
       },
       "dialogs": [
         {
@@ -61,13 +66,19 @@
               "conditions": [
                 {
                   "name": "IsAnswered",
-                  "parameters": [19, 0]
+                  "parameters": [
+                    19,
+                    0
+                  ]
                 }
               ],
               "actions": [
                 {
                   "name": "ChangeItemInInventoryAt",
-                  "parameters": [9, 2]
+                  "parameters": [
+                    9,
+                    2
+                  ]
                 }
               ]
             }
@@ -94,7 +105,10 @@
         "background": 2,
         "character": 6,
         "item": 2,
-        "decorations": [ 0, 1 ]
+        "decorations": [
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
@@ -125,7 +139,10 @@
         "background": 3,
         "character": 8,
         "item": 3,
-        "decorations": [ 0, 1 ]
+        "decorations": [
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
@@ -145,6 +162,56 @@
               "to": 7,
               "conditions": [],
               "actions": []
+            },
+            {
+              "id": 20,
+              "text": "Уронить немного брусники, чтобы лисица подобрала и отвлеклась",
+              "to": 11,
+              "conditions": [
+                {
+                  "name": "HasItem",
+                  "parameters": [
+                    9,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    9,
+                    -2
+                  ]
+                },
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    9
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "text": "Пока лисица чобирала бруснику, вы решили покопаться в её сундуке. Хитрая лиса припрятала туда сокровища!\nВы забрали золото и быстро убежали",
+          "variants": [
+            {
+              "id": 21,
+              "text": "Пойти к реке",
+              "conditions": [],
+              "to": 5,
+              "actions": []
+            },
+            {
+              "id": 22,
+              "text": "Продолжить идти по дороге",
+              "to": 12,
+              "conditions": [],
+              "actions": []
             }
           ]
         }
@@ -156,7 +223,10 @@
         "background": 0,
         "character": 7,
         "item": 0,
-        "decorations": [ 0, 1 ]
+        "decorations": [
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
@@ -187,7 +257,10 @@
         "background": 0,
         "character": 11,
         "item": 4,
-        "decorations": [ 0, 1 ]
+        "decorations": [
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
@@ -231,12 +304,35 @@
         "background": 3,
         "character": 9,
         "item": 5,
-        "decorations": [ 0, 1 ]
+        "decorations": [
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
           "id": 7,
           "text": "Расстроенный и без сокровищ Вы встречаете жар-птицу с мешком золота. Она предлагает Вам попробовать свои силы в борьбе с ней. Если Вы победите, то золото ваше. Если проиграете, то останетесь без него и без жизни",
+          "variants": [
+            {
+              "id": 14,
+              "text": "Помериться силой с жар-птицей",
+              "conditions": [],
+              "to": 8,
+              "actions": []
+            },
+            {
+              "id": 15,
+              "text": "Вежливо отказаться и пойти дальше",
+              "to": 9,
+              "conditions": [],
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "text": "Обрадоавашись найденным сокровищам Вы встречаете жар-птицу с мешком золота. Она предлагает Вам попробовать свои силы в борьбе с ней. Если Вы победите, то золото ваше. Если проиграете, то останетесь без него и без жизни",
           "variants": [
             {
               "id": 14,
@@ -275,16 +371,80 @@
         "background": 4,
         "character": 0,
         "item": 3,
-        "decorations": [ 0, 1, 1, 0, 1 ]
+        "decorations": [
+          0,
+          1,
+          1,
+          0,
+          1
+        ]
       },
       "dialogs": [
         {
           "id": 9,
-          "text": "Около добротного дома богатырь сторожит сундук",
+          "text": "Около добротного дома злой одичавший богатырь сторожит сундук",
           "variants": [
             {
               "id": 17,
-              "text": "Потребовать содержимое сундука",
+              "text": "Потрясти мешком с брусникой",
+                "to": 14,
+              "conditions": [
+                {
+                  "name": "HasItem",
+                  "parameters": [
+                    9,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    9,
+                    -2
+                  ]
+                },
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    9
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Потрясти мешком с брусникой",
+              "to": 15,
+              "conditions": [
+                {
+                  "name": "HasNoItem",
+                  "parameters": [
+                    9,
+                    2
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "id": 18,
+              "text": "Попробовать договориться с богатырем",
+                "to": 13,
+              "conditions": [],
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "text": "Вы попробовали договориться с богатырем, но он молча достал из дома огромного медведя, который съел Вас. С ним просто так не договориться",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Начать сначала",
               "conditions": [],
               "actions": [
                 {
@@ -292,10 +452,180 @@
                   "parameters": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "text": "У Вас оказалось достаточно брусники, чтобы усыпить богатыря и забрать сокровища. Вы победили!",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Радостно вернуться домой",
+              "to": 14,
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Win",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "text": "У Вас оказалось слишком мало брусники, чтобы усыпить богатыря. Он встал и пассивно-агрессивно предложил Вам уйти",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
+              "to": 17,
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    0,
+                    2
+                  ]
+                },
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    1,
+                    5
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                    "parameters": [
+                        0,
+                        16
+                    ]
+                }
+              ]
             },
             {
-              "id": 18,
-              "text": "Поведать богатырю о своих приключениях, если их так можно назвать",
+              "id": 17,
+              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
+              "to": 16,
+              "conditions": [
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    0,
+                    2
+                  ]
+                },
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    1,
+                    5
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [0]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
+              "to": 16,
+              "conditions": [
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    0,
+                    2
+                  ]
+                },
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    1,
+                    5
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [0]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
+              "to": 16,
+              "conditions": [
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    0,
+                    2
+                  ]
+                },
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    1,
+                    5
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [0]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Грустно-пассивно вернуться домой",
+              "to": 14,
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Lose",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "text": "Богатырь оказался сильнее и ловчее Вас. Он сразил Вас и забрал всё, что у Вас было",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Начать сначала",
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Lose",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "text": "Ловкими движениями вы вырубили богатыря! Вы забрали сокровища из сундука, а заодно обокрали самого богатыря, чтоб жизнь малиной не казалась",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Уйти с поляны",
               "conditions": [],
               "actions": [
                 {

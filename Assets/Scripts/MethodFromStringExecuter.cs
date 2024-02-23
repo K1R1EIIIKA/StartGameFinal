@@ -80,5 +80,14 @@ public class MethodFromStringExecuter
     public bool IsStatEqual(int id, int value) =>
         _player.IsStatEqual(id, value);
     
+    public bool HasItem(int id, int count) =>
+        _inventory.HasItem(id, count);
+    
+    public bool HasNoItem(int id, int count) =>
+        _inventory.HasNoItem(id, count);
+    
+    public void ClearItem(int id) =>
+        _inventory.ChangeItemInInventoryAt(id, -_inventory.Items[id]);
+    
     #endregion
 }

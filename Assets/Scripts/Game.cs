@@ -2,6 +2,7 @@
 using System.Linq;
 using GameConfiguration;
 using Player;
+using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,11 @@ public class Game : MonoBehaviour
     
     [SerializeField] private DialogPanel _dialogPanel;
     [SerializeField] private LocationBuilder _locationBuilder;
+    [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _winPanel;
+    [SerializeField] private TextMeshProUGUI _goldText;
+    [SerializeField] private TextMeshProUGUI _expText;
+    [SerializeField] private GameObject _pausePanel;
     
     private List<GameNode> _gameNodes;
     private readonly List<int> _savedAnswersId = new List<int>();
@@ -74,7 +80,10 @@ public class Game : MonoBehaviour
     {
         GameLog.Instance.Log("[Вы выиграли!]");
         _savedAnswersId.Clear();
-        RestartGame();
+        
+        _goldText.text = FindObjectOfType<Inventory>().Items[0] + " золота";
+        _expText.text = FindObjectOfType<Player.Player>().Exp + " опыта";
+        _winPanel.SetActive(true);
     }
 
     public void Lose()
@@ -82,6 +91,9 @@ public class Game : MonoBehaviour
         GameLog.Instance.Log("[Вы проиграли!]");
         _savedAnswersId.Clear();
         RestartGame();
+        // _goldText.text = FindObjectOfType<Inventory>().Items[0] + " золота";
+        // _expText.text = FindObjectOfType<Player.Player>().Exp + " опыта";
+        // _gameOverPanel.SetActive(true);
     }
     
     public void RestartGame()

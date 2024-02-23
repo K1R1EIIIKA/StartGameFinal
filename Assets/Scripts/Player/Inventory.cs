@@ -35,6 +35,21 @@ namespace Player
         {
             return Items[id] > 0;
         }
+        
+        public bool HasItem(int id, int count)
+        {
+            return Items[id] >= count;
+        }
+        
+        public bool HasNoItem(int id)
+        {
+            return Items[id] == 0;
+        }
+        
+        public bool HasNoItem(int id, int count)
+        {
+            return Items[id] < count;
+        }
     }
 }
 

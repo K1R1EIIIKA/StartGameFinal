@@ -57,7 +57,7 @@ namespace Player
 
         public bool IsStatMore(int id, int value)
         {
-            return _characteristics[id] > value;
+            return _characteristics[id] >= value;
         }
         
         public bool IsStatLess(int id, int value)
