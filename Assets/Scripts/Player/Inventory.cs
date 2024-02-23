@@ -8,6 +8,19 @@ namespace Player
     public class Inventory : MonoBehaviour
     {
         public readonly List<int> Items = new List<int>();
+        public readonly List<string> ItemNames = new List<string>
+        {
+            "Монеты",
+            "Мясо кролика",
+            "Мясо медведя",
+            "Мясо медведя",
+            "Хвост волка",
+            "Хвост лисы",
+            "Грибы",
+            "Ключ",
+            "Травы",
+            "Брусника"
+        };
         
         public UnityEvent<List<int>> InventoryInited;
         public UnityEvent<int, int> InventoryChanged;

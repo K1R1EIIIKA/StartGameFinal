@@ -57,7 +57,13 @@ public class MethodFromStringExecuter
     
     public void ChangeCharacteristic(int id, int value) =>
         _player.ChangeCharacteristic(id, value);
+    
+    public void ChangeHealth(int value) =>
+        _player.ChangeHealth(value);
 
+    public void ChangeExp(int value) =>
+        _player.ChangeExp(value);
+    
     public void Win() =>
         _game.Win();
 
@@ -79,6 +85,12 @@ public class MethodFromStringExecuter
     
     public bool IsStatEqual(int id, int value) =>
         _player.IsStatEqual(id, value);
+    
+    public bool IsHealthMore(int value) =>
+        _player.IsHealthMore(value);
+    
+    public bool IsHealthLess(int value) =>
+        _player.IsHealthLess(value);
     
     public bool HasItem(int id, int count) =>
         _inventory.HasItem(id, count);

@@ -30,7 +30,10 @@ namespace Player
             if (Health > MaxHealth)
                 Health = MaxHealth;
             if (Health < 0)
+            {
                 Health = 0;
+                // Game.Instance.GameOver();
+            }
             
             CharacteristicsChanged?.Invoke(_characteristics);
         }
@@ -68,6 +71,16 @@ namespace Player
         public bool IsStatEqual(int id, int value)
         {
             return _characteristics[id] == value;
+        }
+        
+        public bool IsHealthMore(int value)
+        {
+            return Health >= value;
+        }
+        
+        public bool IsHealthLess(int value)
+        {
+            return Health < value;
         }
     }
 }

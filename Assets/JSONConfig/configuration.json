@@ -387,7 +387,7 @@
             {
               "id": 17,
               "text": "Потрясти мешком с брусникой",
-                "to": 14,
+              "to": 14,
               "conditions": [
                 {
                   "name": "HasItem",
@@ -432,7 +432,7 @@
             {
               "id": 18,
               "text": "Попробовать договориться с богатырем",
-                "to": 13,
+              "to": 13,
               "conditions": [],
               "actions": []
             }
@@ -497,15 +497,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "name": "ChangeItemInInventoryAt",
-                    "parameters": [
-                        0,
-                        16
-                    ]
-                }
-              ]
+              "actions": []
             },
             {
               "id": 17,
@@ -530,7 +522,9 @@
               "actions": [
                 {
                   "name": "ClearItem",
-                  "parameters": [0]
+                  "parameters": [
+                    0
+                  ]
                 }
               ]
             },
@@ -557,7 +551,9 @@
               "actions": [
                 {
                   "name": "ClearItem",
-                  "parameters": [0]
+                  "parameters": [
+                    0
+                  ]
                 }
               ]
             },
@@ -584,7 +580,9 @@
               "actions": [
                 {
                   "name": "ClearItem",
-                  "parameters": [0]
+                  "parameters": [
+                    0
+                  ]
                 }
               ]
             },
@@ -621,11 +619,277 @@
         },
         {
           "id": 17,
-          "text": "Ловкими движениями вы вырубили богатыря! Вы забрали сокровища из сундука, а заодно обокрали самого богатыря, чтоб жизнь малиной не казалась",
+          "text": "Вы ловко уворачивались от ударов богатыря, но он собирается прыгнуть на Вас. Что делать? (требуется 220 здоровья и 2 удачи)",
           "variants": [
             {
               "id": 17,
+              "text": "Попробовать увернуться",
+              "to": 18,
+              "conditions": [
+                {
+                  "name": "IsHealthMore",
+                  "parameters": [
+                    220
+                  ]
+                },
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    16
+                  ]
+                },
+                {
+                  "name": "ChangeExp",
+                  "parameters": [
+                    50
+                  ]
+                },
+                {
+                  "name": "ChangeHealth",
+                  "parameters": [
+                    -210
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Попробовать увернуться",
+              "to": 19,
+              "conditions": [
+                {
+                  "name": "IsHealthLess",
+                  "parameters": [
+                    220
+                  ]
+                },
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                },
+                {
+                  "name": "ChangeHealth",
+                  "parameters": [
+                    -210
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Попробовать увернуться",
+              "to": 19,
+              "conditions": [
+                {
+                  "name": "IsHealthMore",
+                  "parameters": [
+                    220
+                  ]
+                },
+                {
+                  "name": "IsStatLess",
+                  "parameters": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                },
+                {
+                  "name": "ChangeHealth",
+                  "parameters": [
+                    -210
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Попробовать увернуться",
+              "to": 19,
+              "conditions": [
+                {
+                  "name": "IsHealthLess",
+                  "parameters": [
+                    220
+                  ]
+                },
+                {
+                  "name": "IsStatMore",
+                  "parameters": [
+                    2,
+                    2
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                },
+                {
+                  "name": "ChangeHealth",
+                  "parameters": [
+                    -210
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "text": "Смириться с судьбой",
+              "to": 19,
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                },
+                {
+                  "name": "ChangeHealth",
+                  "parameters": [
+                    -210
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "text": "Вы не смогли увернуться от удара богатыря. Он сразил Вас и забрал всё, что у Вас было",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Начать сначала",
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Lose",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "location": {
+        "background": 4,
+        "character": -1,
+        "item": 3,
+        "decorations": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "dialogs": [
+        {
+          "id": 18,
+          "text": "Вы еле увернулись от удара богатыря и смогли ударить его в ответ! Вы обокрали богатыря. Перед Вами закрытый сундук с сокровищами",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Открыть сундук",
+              "to": 20,
+              "conditions": [
+                {
+                  "name": "HasItem",
+                  "parameters": [
+                    7,
+                    1
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    7,
+                    -1
+                  ]
+                },
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    21
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 17,
               "text": "Уйти с поляны",
+              "to": 21,
+              "conditions": [],
+              "actions": []
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "text": "Вы нашли кучу сокровищ и будете жить долго и счастливо!",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Ура!",
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Win",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "text": "Вы ушли с поляны! Без сокровищ, зато живой",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Ура!",
               "conditions": [],
               "actions": [
                 {

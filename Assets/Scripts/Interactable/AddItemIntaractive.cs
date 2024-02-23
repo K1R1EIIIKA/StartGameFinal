@@ -20,6 +20,7 @@ namespace Interactable
         {
             _player.ChangeExp(_exp);
             _inventory.ChangeItemInInventoryAt(_itemId, _count);
+            GameLog.Instance.Log($"[+1 {_inventory.ItemNames[_itemId]}] Вы нашли {_inventory.ItemNames[_itemId]}! ");
             
             gameObject.SetActive(false);
         }
