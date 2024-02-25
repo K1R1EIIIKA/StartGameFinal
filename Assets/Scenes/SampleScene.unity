@@ -2472,7 +2472,7 @@ GameObject:
   - component: {fileID: 966550883}
   - component: {fileID: 966550882}
   m_Layer: 0
-  m_Name: Bootstruper
+  m_Name: Bootstrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3220,6 +3220,7 @@ MonoBehaviour:
   _decorations:
   - {fileID: 2493551641654694777, guid: 96373854c19e298418bc911f323378b6, type: 3}
   - {fileID: 2493551641654694777, guid: 8cd8e698f206b594390f7201d9b125f5, type: 3}
+  - {fileID: 2493551641654694777, guid: b085ce7058d36ad40b68f485799823f1, type: 3}
 --- !u!1 &1087005557
 GameObject:
   m_ObjectHideFlags: 0

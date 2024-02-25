@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Player;
 using UnityEngine;
 
@@ -64,6 +65,25 @@ public class MethodFromStringExecuter
     public void ChangeExp(int value) =>
         _player.ChangeExp(value);
     
+    public void ClearItem(int id) =>
+        _inventory.ChangeItemInInventoryAt(id, -_inventory.Items[id]);
+    
+    public void GoToDialogIfPowerAgility(int powerId, int powerValue, int agilityId, int agilityValue, int dialogId, int elseDialogId)
+    {
+        if (_player.IsStatMore(powerId, powerValue) && _player.IsStatMore(agilityId, agilityValue))
+            _game.GoToDialog(dialogId);
+        else
+            _game.GoToDialog(elseDialogId);
+    }
+    
+    public void GoToDialogIfHealthLuck(int healthValue, int luckValue, int dialogId, int elseDialogId)
+    {
+        if (_player.IsHealthMore(healthValue) && _player.IsStatMore(2, luckValue))
+            _game.GoToDialog(dialogId);
+        else
+            _game.GoToDialog(elseDialogId);
+    }
+    
     public void Win() =>
         _game.Win();
 
@@ -97,9 +117,6 @@ public class MethodFromStringExecuter
     
     public bool HasNoItem(int id, int count) =>
         _inventory.HasNoItem(id, count);
-    
-    public void ClearItem(int id) =>
-        _inventory.ChangeItemInInventoryAt(id, -_inventory.Items[id]);
     
     #endregion
 }

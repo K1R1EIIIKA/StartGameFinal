@@ -30,7 +30,9 @@ namespace UI
 
             }
 
-            _mainButton.onClick.AddListener(() => Game.Instance.GoToDialog(variant.to));
+            if (variant.to >= 0)
+                _mainButton.onClick.AddListener(() => Game.Instance.GoToDialog(variant.to));
+            
             _mainButton.onClick.AddListener(() => GameLog.Instance.Log(_text.text));
             _mainButton.onClick.AddListener(() => Game.Instance.SaveAnswer(variant.id));
             // Debug.Log(String.Join(", ", Game.Instance.GetSavedAnswers()));

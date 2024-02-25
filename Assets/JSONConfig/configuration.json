@@ -10,7 +10,11 @@
           0,
           1,
           2,
-          1
+          1,
+          2,
+          2,
+          1,
+          0
         ]
       },
       "dialogs": [
@@ -37,14 +41,30 @@
               "text": "Идти в сторону реки",
               "to": 4,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    3,
+                    1
+                  ]
+                }
+              ]
             },
             {
               "id": 3,
               "text": "Идти дальше за сокровищами",
               "to": 3,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    5,
+                    1
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -107,7 +127,12 @@
         "item": 2,
         "decorations": [
           0,
-          1
+          1,
+          1,
+          2,
+          2,
+          2,
+          2
         ]
       },
       "dialogs": [
@@ -127,7 +152,15 @@
               "text": "Пойти направо",
               "to": 3,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    5,
+                    1
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -141,7 +174,11 @@
         "item": 3,
         "decorations": [
           0,
-          1
+          0,
+          0,
+          0,
+          2,
+          2
         ]
       },
       "dialogs": [
@@ -187,8 +224,21 @@
                 {
                   "name": "ChangeItemInInventoryAt",
                   "parameters": [
+                    7,
+                    1
+                  ]
+                },
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
                     0,
                     9
+                  ]
+                },
+                {
+                  "name": "ChangeExp",
+                  "parameters": [
+                    50
                   ]
                 }
               ]
@@ -197,7 +247,7 @@
         },
         {
           "id": 11,
-          "text": "Пока лисица чобирала бруснику, вы решили покопаться в её сундуке. Хитрая лиса припрятала туда сокровища!\nВы забрали золото и быстро убежали",
+          "text": "Пока лисица собирала бруснику, вы решили покопаться в её сундуке. Хитрая лиса припрятала туда сокровища!\nВы забрали золото и нашли неизвестный ключ и быстро убежали",
           "variants": [
             {
               "id": 21,
@@ -225,7 +275,15 @@
         "item": 0,
         "decorations": [
           0,
-          1
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          2
         ]
       },
       "dialogs": [
@@ -238,14 +296,30 @@
               "text": "Попробовать шашлык",
               "conditions": [],
               "to": 3,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    5,
+                    1
+                  ]
+                }
+              ]
             },
             {
               "id": 10,
               "text": "А вдруг шашлык будет сделан из Вас? Лучше уйти отсюда побыстрее",
               "to": 7,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    2,
+                    1
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -259,7 +333,18 @@
         "item": 4,
         "decorations": [
           0,
-          1
+          1,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          2,
+          1,
+          2,
+          2,
+          0
         ]
       },
       "dialogs": [
@@ -272,7 +357,28 @@
               "text": "Помочь коту",
               "conditions": [],
               "to": 9,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    7
+                  ]
+                },
+                {
+                  "name": "ChangeExp",
+                    "parameters": [
+                        50
+                    ]
+                },
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    2,
+                    2
+                  ]
+                }
+              ]
             },
             {
               "id": 11,
@@ -289,10 +395,14 @@
           "variants": [
             {
               "id": 13,
-              "text": "Отмотать время назад",
+              "text": "Начать сначала",
               "conditions": [],
-              "to": 5,
-              "actions": []
+              "actions": [
+                {
+                  "name": "Lose",
+                  "parameters": []
+                }
+              ]
             }
           ]
         }
@@ -306,7 +416,10 @@
         "item": 5,
         "decorations": [
           0,
-          1
+          1,
+          2,
+          1,
+          0
         ]
       },
       "dialogs": [
@@ -319,7 +432,14 @@
               "text": "Помериться силой с жар-птицей",
               "conditions": [],
               "to": 8,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                }
+              ]
             },
             {
               "id": 15,
@@ -332,14 +452,21 @@
         },
         {
           "id": 12,
-          "text": "Обрадоавашись найденным сокровищам Вы встречаете жар-птицу с мешком золота. Она предлагает Вам попробовать свои силы в борьбе с ней. Если Вы победите, то золото ваше. Если проиграете, то останетесь без него и без жизни",
+          "text": "Обрадовавашись найденным сокровищам Вы встречаете жар-птицу с мешком золота. Она предлагает Вам попробовать свои силы в борьбе с ней. Если Вы победите, то золото ваше. Если проиграете, то останетесь без него и без жизни",
           "variants": [
             {
               "id": 14,
               "text": "Помериться силой с жар-птицей",
               "conditions": [],
               "to": 8,
-              "actions": []
+              "actions": [
+                {
+                  "name": "ClearItem",
+                  "parameters": [
+                    0
+                  ]
+                }
+              ]
             },
             {
               "id": 15,
@@ -356,10 +483,14 @@
           "variants": [
             {
               "id": 16,
-              "text": "Отмотать время назад",
+              "text": "Начать сначала",
               "conditions": [],
-              "to": 7,
-              "actions": []
+              "actions": [
+                {
+                  "name": "Lose",
+                  "parameters": []
+                }
+              ]
             }
           ]
         }
@@ -376,6 +507,10 @@
           1,
           1,
           0,
+          1,
+          2,
+          2,
+          2,
           1
         ]
       },
@@ -456,132 +591,24 @@
           ]
         },
         {
-          "id": 14,
-          "text": "У Вас оказалось достаточно брусники, чтобы усыпить богатыря и забрать сокровища. Вы победили!",
-          "variants": [
-            {
-              "id": 17,
-              "text": "Радостно вернуться домой",
-              "to": 14,
-              "conditions": [],
-              "actions": [
-                {
-                  "name": "Win",
-                  "parameters": []
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": 15,
           "text": "У Вас оказалось слишком мало брусники, чтобы усыпить богатыря. Он встал и пассивно-агрессивно предложил Вам уйти",
           "variants": [
             {
               "id": 17,
               "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
-              "to": 17,
-              "conditions": [
-                {
-                  "name": "IsStatMore",
-                  "parameters": [
-                    0,
-                    2
-                  ]
-                },
-                {
-                  "name": "IsStatMore",
-                  "parameters": [
-                    1,
-                    5
-                  ]
-                }
-              ],
-              "actions": []
-            },
-            {
-              "id": 17,
-              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
-              "to": 16,
-              "conditions": [
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
-                    0,
-                    2
-                  ]
-                },
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
-                    1,
-                    5
-                  ]
-                }
-              ],
+                "to": -1,
+              "conditions": [],
               "actions": [
                 {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
-                  ]
-                }
-              ]
-            },
-            {
-              "id": 17,
-              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
-              "to": 16,
-              "conditions": [
-                {
-                  "name": "IsStatMore",
+                  "name": "GoToDialogIfPowerAgility",
                   "parameters": [
                     0,
-                    2
-                  ]
-                },
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
+                    2,
                     1,
-                    5
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
-                  ]
-                }
-              ]
-            },
-            {
-              "id": 17,
-              "text": "Сразиться с богатырем (требуется 2 силы и 5 ловкости)",
-              "to": 16,
-              "conditions": [
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
-                    0,
-                    2
-                  ]
-                },
-                {
-                  "name": "IsStatMore",
-                  "parameters": [
-                    1,
-                    5
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
+                    5,
+                    17,
+                    16
                   ]
                 }
               ]
@@ -623,137 +650,17 @@
           "variants": [
             {
               "id": 17,
-              "text": "Попробовать увернуться",
-              "to": 18,
-              "conditions": [
-                {
-                  "name": "IsHealthMore",
-                  "parameters": [
-                    220
-                  ]
-                },
-                {
-                  "name": "IsStatMore",
-                  "parameters": [
-                    2,
-                    2
-                  ]
-                }
-              ],
+              "text": "Попытаться увернуться",
+              "to": -1,
+              "conditions": [],
               "actions": [
                 {
-                  "name": "ChangeItemInInventoryAt",
+                  "name": "GoToDialogIfHealthLuck",
                   "parameters": [
-                    0,
-                    16
-                  ]
-                },
-                {
-                  "name": "ChangeExp",
-                  "parameters": [
-                    50
-                  ]
-                },
-                {
-                  "name": "ChangeHealth",
-                  "parameters": [
-                    -210
-                  ]
-                }
-              ]
-            },
-            {
-              "id": 17,
-              "text": "Попробовать увернуться",
-              "to": 19,
-              "conditions": [
-                {
-                  "name": "IsHealthLess",
-                  "parameters": [
-                    220
-                  ]
-                },
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
+                    220,
                     2,
-                    2
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
-                  ]
-                },
-                {
-                  "name": "ChangeHealth",
-                  "parameters": [
-                    -210
-                  ]
-                }
-              ]
-            },
-            {
-              "id": 17,
-              "text": "Попробовать увернуться",
-              "to": 19,
-              "conditions": [
-                {
-                  "name": "IsHealthMore",
-                  "parameters": [
-                    220
-                  ]
-                },
-                {
-                  "name": "IsStatLess",
-                  "parameters": [
-                    2,
-                    2
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
-                  ]
-                },
-                {
-                  "name": "ChangeHealth",
-                  "parameters": [
-                    -210
-                  ]
-                }
-              ]
-            },
-            {
-              "id": 17,
-              "text": "Попробовать увернуться",
-              "to": 19,
-              "conditions": [
-                {
-                  "name": "IsHealthLess",
-                  "parameters": [
-                    220
-                  ]
-                },
-                {
-                  "name": "IsStatMore",
-                  "parameters": [
-                    2,
-                    2
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "name": "ClearItem",
-                  "parameters": [
-                    0
+                    18,
+                    19
                   ]
                 },
                 {
@@ -852,7 +759,13 @@
                   "name": "ChangeItemInInventoryAt",
                   "parameters": [
                     0,
-                    21
+                    57
+                  ]
+                },
+                {
+                  "name": "ChangeExp",
+                  "parameters": [
+                    150
                   ]
                 }
               ]
@@ -862,7 +775,21 @@
               "text": "Уйти с поляны",
               "to": 21,
               "conditions": [],
-              "actions": []
+              "actions": [
+                {
+                  "name": "ChangeItemInInventoryAt",
+                  "parameters": [
+                    0,
+                    24
+                  ]
+                },
+                {
+                  "name": "ChangeExp",
+                    "parameters": [
+                        100
+                    ]
+                }
+              ]
             }
           ]
         },
@@ -890,6 +817,44 @@
             {
               "id": 17,
               "text": "Ура!",
+              "conditions": [],
+              "actions": [
+                {
+                  "name": "Win",
+                  "parameters": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "location": {
+        "background": 4,
+        "character": -1,
+        "item": -1,
+        "decorations": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "dialogs": [
+        {
+          "id": 14,
+          "text": "У Вас оказалось достаточно брусники, чтобы усыпить богатыря и забрать сокровища. Но перед этим богатырь успел кинуть сундук подальше отсюда.. Вы победили!",
+          "variants": [
+            {
+              "id": 17,
+              "text": "Радостно вернуться домой",
+              "to": 14,
               "conditions": [],
               "actions": [
                 {
